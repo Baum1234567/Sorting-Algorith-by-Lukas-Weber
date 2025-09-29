@@ -9,11 +9,13 @@ Sorting Algorithm Visualizer
 A Python program that visualizes various sorting algorithms using Pygame. You can choose the number of elements and the sorting algorithm to see how it works step by step.
 
 How to Run
+
 python sortingAlgorithm.py <number_of_elements> <sortingType>
 
 <number_of_elements>: Number of elements to sort (e.g., 100, 500)
 
-<sortingType>:<sortingType> Choose the sorting algorithm by number (see table below)
+
+<sortingType>: Choose the sorting algorithm by number (see table below)
 
 Sorting Algorithms
 
