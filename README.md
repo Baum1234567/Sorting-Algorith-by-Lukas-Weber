@@ -13,7 +13,7 @@ python sortingAlgorithm.py <number_of_elements> <sortingType>
 
 <number_of_elements>: Number of elements to sort (e.g., 100, 500)
 
-<sortingType>: Choose the sorting algorithm by number (see table below)
+<sortingType>:<sortingType> Choose the sorting algorithm by number (see table below)
 
 Sorting Algorithms
 
