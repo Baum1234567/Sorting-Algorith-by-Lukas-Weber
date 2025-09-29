@@ -7,7 +7,7 @@ import time                                 # import time to use time functions
 #---------main function---------#
 def main(n,sortingType):
 
-    print(f"Sorting type {sortingType}")
+    #print(f"Sorting type {sortingType}")
 
     #---------create a shuffled list---------#
     numbers = createShuffledList()
@@ -30,15 +30,36 @@ def main(n,sortingType):
             sortedNumbers = bubbleSort(numbers)
             print("Using bubble sort.")
         case 2:
-            sortedNumbers = cocktailSort(numbers)
-            print("Using Cocktail sort.")
+            sortedNumbers = selectionSort(numbers)
+            print("Using selection sort.")
         case 3:
             sortedNumbers = insertionSort(numbers)
             print("Using Insertion sort.")
         case 4:
-            sortedNumbers = selectionSort(numbers)
-            print("Using Selection sort.")
-            sleepTime = 0.05
+            sortedNumbers = mergeSort(numbers)
+            print("Using Merge sort.")
+        case 5:
+            sortedNumbers = quickSort(numbers)
+            print("Using Quick sort.")
+        case 6:
+            sortedNumbers = heapSort(numbers)
+            print("Using Heap sort.")
+        case 7:
+            sortedNumbers = countingSort(numbers)
+            print("Using Counting sort.")
+        case 8:
+            sortedNumbers = shellSort(numbers)
+            print("Using Shell sort.")
+        case 9:
+            sortedNumbers = timSort(numbers)
+            print("Using Tim sort.")
+        case 10:
+            sortedNumbers = radixSort(numbers)
+            print("Using Radix sort.")
+        case 11:
+            sortedNumbers = stalinSort(numbers)
+            print("Using Stalin sort.")
+
 
     #-----------main loop------------#
     while running:                                          # main loop checks whether the window is still open
@@ -102,54 +123,35 @@ def bubbleSort(lst):
                 lst[j], lst[j + 1] = lst[j + 1], lst[j]
                 yield lst
 
-def cocktailSort(lst):
-    n = len(lst)
-    start = 0
-    end = n - 1
-    swapped = True
-    while swapped:
-        swapped = False
-        for i in range(start, end):
-            if lst[i] > lst[i + 1]:
-                lst[i], lst[i + 1] = lst[i + 1], lst[i]
-                swapped = True
-                yield lst
-        if not swapped:
-            break
-        swapped = False
-        end -= 1
-        for i in range(end - 1, start - 1, -1):
-            if lst[i] > lst[i + 1]:
-                lst[i], lst[i + 1] = lst[i + 1], lst[i]
-                swapped = True
-                yield lst
-        start += 1
+def selectionSort(lst):
+    pass
 
 def insertionSort(lst):
-    for i in range(1, len(lst)):
-        key = lst[i]
-        j = i - 1
-        while j >= 0 and lst[j] > key:
-            lst[j + 1] = lst[j]
-            j -= 1
-            yield lst
-        lst[j + 1] = key
-        yield lst
+    pass
 
+def mergeSort(lst):
+    pass
 
-def selectionSort(lst):
-    n = len(lst)
-    for i in range(n):
-        min_idx = i
-        for j in range(i + 1, n):
-            if lst[j] < lst[min_idx]:
-                min_idx = j
-        if min_idx != i:
-            lst[i], lst[min_idx] = lst[min_idx], lst[i]
-            yield lst
+def quickSort(lst):
+    pass
 
+def heapSort(lst):
+    pass
 
+def countingSort(lst):
+    pass
 
+def shellSort(lst):
+    pass
+
+def timSort(lst):
+    pass
+
+def radixSort(lst):
+    pass
+
+def stalinSort(lst):
+    pass
 
 if __name__ == "__main__":
 
