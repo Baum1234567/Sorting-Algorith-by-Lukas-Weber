@@ -115,7 +115,7 @@ def shuffel(lst):
 
 #--------------buble sort--------------#
 def bubbleSort(lst):
-
+    
     n = len(lst)
     for i in range(n):
         for j in range(0, n - i - 1):
@@ -124,7 +124,16 @@ def bubbleSort(lst):
                 yield lst
 
 def selectionSort(lst):
-    pass
+    
+    n = len(lst)
+    smallest = n
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if lst[j] < smallest:
+                smallest = lst[j]
+                smallestIndex = j
+        if lst[i] > smallest:
+            lst[i], lst[j + 1] = lst[j + 1], lst[1]
 
 def insertionSort(lst):
     pass
@@ -158,5 +167,6 @@ if __name__ == "__main__":
     n = int(sys.argv[1])
     sortingType = int(sys.argv[2])
     main(n, sortingType)
+
 
 
