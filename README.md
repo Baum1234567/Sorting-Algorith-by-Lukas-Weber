@@ -17,9 +17,9 @@ python sortingAlgorithm.py <number_of_elements> <sorting_type>
 ---
 
 # Sorting Algorithms
-1. Bubble Sort – Compares adjacent elements and swaps them if needed, causing the largest elements to "bubble" to the end. Simple but inefficient for large lists.
+1. Bubble Sort – Compares adjacent elements and swaps them if needed, causing the largest elements to "bubble" to the end. Simple but inefficient for large lists. ✓
 
-2. Selection Sort – Finds the smallest element in the unsorted portion and places it at the current position. Performs minimal swaps but still O(n²) time complexity.
+2. Selection Sort – Finds the smallest element in the unsorted portion and places it at the current position. Performs minimal swaps but still O(n²) time complexity. ✓
 
 3. Insertion Sort – Inserts each element into its correct position within the sorted portion of the list. Efficient for small or nearly sorted datasets.
 
@@ -37,7 +37,7 @@ python sortingAlgorithm.py <number_of_elements> <sorting_type>
 
 10. Radix Sort – Sorts numbers digit by digit, starting from the least significant digit. Works well for integers or fixed-length strings.
 
-11. Stalin Sort – Removes any element that is out of order, keeping only the non-decreasing subsequence. Mostly a joke algorithm but produces a sorted sequence instantly.
+11. Stalin Sort – Removes any element that is out of order, keeping only the non-decreasing subsequence. Mostly a joke algorithm but produces a sorted sequence instantly. ✓
 
 ---
 
