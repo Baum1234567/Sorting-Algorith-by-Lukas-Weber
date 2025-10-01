@@ -7,6 +7,8 @@ import time                                 # import time to use time functions
 #---------main function---------#
 def main(n,sortingType):
 
+    startingTime = time.time()
+
     #print(f"Sorting type {sortingType}")
 
     #---------create a shuffled list---------#
@@ -20,6 +22,8 @@ def main(n,sortingType):
     py.display.set_caption("Sorting Algorithm 1")           # set caption from the screen
     running = True
 
+    sortingStarted = False
+    sortingFinished = False
     sortedNumbers = []
     #sortedNumbers = bubbleSort(numbers)
 
@@ -60,23 +64,32 @@ def main(n,sortingType):
             sortedNumbers = stalinSort(numbers)
             print("Using Stalin sort.")
 
-
     #-----------main loop------------#
     while running:                                          # main loop checks whether the window is still open
         for event in py.event.get():                        # and will update everything
             if event.type == py.QUIT:
                 running = False
+            keys = py.key.get_pressed()
+            if keys[py.K_SPACE]:
+                sortingStarted = True
+                startingTime = time.time()
+
         screen.fill((0, 0, 0))                              # background is black
 
         drawRects(screen, numbers, width, height)           # draw bars
 
-        try:                                                # credits to ChatGPT: without those 4 lines
-            next(sortedNumbers)                             # there would be no animation,
-        except StopIteration:                               # it would be sorted all at once, and
-            pass                                            # you wouldn't see how the algorithm works
+        if sortingStarted and not sortingFinished:                      # ChatGPT:
+            try:                                                        # try:
+                next(sortedNumbers)                                     #   next()
+            except StopIteration:                                       # except StopIteration
+                endingTime = time.time()
+                print(f"Total time: {round((endingTime - startingTime), 4)}s")
+                sortingFinished = True
 
         time.sleep(sleepTime)
         py.display.update()
+
+
 
     py.quit()
 
@@ -84,7 +97,7 @@ def main(n,sortingType):
 def drawRects(screen, lst, width, height):
     bar_width = width / len(lst)                            # every bar has the same width
     max_value = max(lst)                                    # highest value in the list
-    green = (0, 255, 0)
+    green = (0, 0, 0)
 
     for i, val in enumerate(lst):
         bar_height = int((val / max_value) * height)
@@ -115,7 +128,7 @@ def shuffel(lst):
 
 #--------------buble sort--------------#
 def bubbleSort(lst):
-    
+
     n = len(lst)
     for i in range(n):
         for j in range(0, n - i - 1):
@@ -124,16 +137,15 @@ def bubbleSort(lst):
                 yield lst
 
 def selectionSort(lst):
-    
+
     n = len(lst)
-    smallest = n
     for i in range(n):
-        for j in range(0, n - i - 1):
-            if lst[j] < smallest:
-                smallest = lst[j]
+        smallestIndex = i
+        for j in range(i + 1, n):
+            if lst[j] < lst[smallestIndex]:
                 smallestIndex = j
-        if lst[i] > smallest:
-            lst[i], lst[j + 1] = lst[j + 1], lst[1]
+        if smallestIndex != i:
+            lst[i], lst[smallestIndex] = lst[smallestIndex], lst[i]
             yield lst
 
 def insertionSort(lst):
@@ -170,5 +182,4 @@ if __name__ == "__main__":
     main(n, sortingType)
 
 
-
-
+# youtube video: https://www.youtube.com/watch?v=rbbTd-gkajw
