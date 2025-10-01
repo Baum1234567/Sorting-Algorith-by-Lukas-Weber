@@ -134,6 +134,7 @@ def selectionSort(lst):
                 smallestIndex = j
         if lst[i] > smallest:
             lst[i], lst[j + 1] = lst[j + 1], lst[1]
+            yield lst
 
 def insertionSort(lst):
     pass
@@ -167,6 +168,7 @@ if __name__ == "__main__":
     n = int(sys.argv[1])
     sortingType = int(sys.argv[2])
     main(n, sortingType)
+
 
 
 
