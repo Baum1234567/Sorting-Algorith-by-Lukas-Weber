@@ -5,7 +5,7 @@ import pygame as py                         # import pygame to use pygame functi
 import time                                 # import time to use time functions
 
 #---------main function---------#
-def main(n,sortingType):
+def main(n,sortingType, sleepTime=0):
 
     startingTime = time.time()
 
@@ -27,7 +27,7 @@ def main(n,sortingType):
     sortedNumbers = []
     #sortedNumbers = bubbleSort(numbers)
 
-    sleepTime = 0
+
     #----------------select sorting algorithm----------------#
     match sortingType:
         case 1:
@@ -86,10 +86,8 @@ def main(n,sortingType):
                 print(f"Total time: {round((endingTime - startingTime), 4)}s")
                 sortingFinished = True
 
-        time.sleep(sleepTime)
+        time.sleep(sleepTime / 1000)
         py.display.update()
-
-
 
     py.quit()
 
@@ -97,7 +95,7 @@ def main(n,sortingType):
 def drawRects(screen, lst, width, height):
     bar_width = width / len(lst)                            # every bar has the same width
     max_value = max(lst)                                    # highest value in the list
-    green = (0, 0, 0)
+    green = (0, 255, 0)
 
     for i, val in enumerate(lst):
         bar_height = int((val / max_value) * height)
@@ -125,7 +123,6 @@ def shuffel(lst):
     random.shuffle(shuffledNumbers)                     # the copied list is shuffled
     return shuffledNumbers                              # the shuffled list is returned
 
-
 #--------------buble sort--------------#
 def bubbleSort(lst):
 
@@ -136,6 +133,7 @@ def bubbleSort(lst):
                 lst[j], lst[j + 1] = lst[j + 1], lst[j]
                 yield lst
 
+#--------------selection sort--------------#
 def selectionSort(lst):
 
     n = len(lst)
@@ -148,38 +146,62 @@ def selectionSort(lst):
             lst[i], lst[smallestIndex] = lst[smallestIndex], lst[i]
             yield lst
 
+#--------------insertion sort--------------#
 def insertionSort(lst):
     pass
 
+#--------------merge sort--------------#
 def mergeSort(lst):
     pass
 
+#--------------quick sort--------------#
 def quickSort(lst):
     pass
 
+#--------------heap sort--------------#
 def heapSort(lst):
     pass
 
+#--------------counting sort--------------#
 def countingSort(lst):
     pass
 
+#--------------shell sort--------------#
 def shellSort(lst):
     pass
 
+#--------------tim sort--------------#
 def timSort(lst):
     pass
 
+#--------------radix sort--------------#
 def radixSort(lst):
     pass
 
+#--------------stalin sort--------------#
 def stalinSort(lst):
-    pass
+
+    i = 1
+    highest = lst[0]
+    while i < len(lst):
+
+        if lst[i] > highest:
+            highest = lst[i]
+            i += 1
+        else:
+            del lst[i]
+        yield lst
 
 if __name__ == "__main__":
 
     n = int(sys.argv[1])
     sortingType = int(sys.argv[2])
-    main(n, sortingType)
+    if len(sys.argv) > 3:
+        sleepTime = int(sys.argv[3])
+    else:
+        sleepTime = 0
 
+    main(n, sortingType, sleepTime)
 
 # youtube video: https://www.youtube.com/watch?v=rbbTd-gkajw
+
