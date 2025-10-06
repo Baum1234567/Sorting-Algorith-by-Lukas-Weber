@@ -29,40 +29,43 @@ def main(n,sortingType, sleepTime=0):
 
 
     #----------------select sorting algorithm----------------#
-    match sortingType:
-        case 1:
-            sortedNumbers = bubbleSort(numbers)
-            print("Using bubble sort.")
-        case 2:
-            sortedNumbers = selectionSort(numbers)
-            print("Using selection sort.")
-        case 3:
-            sortedNumbers = insertionSort(numbers)
-            print("Using Insertion sort.")
-        case 4:
-            sortedNumbers = mergeSort(numbers)
-            print("Using Merge sort.")
-        case 5:
-            sortedNumbers = quickSort(numbers)
-            print("Using Quick sort.")
-        case 6:
-            sortedNumbers = heapSort(numbers)
-            print("Using Heap sort.")
-        case 7:
-            sortedNumbers = countingSort(numbers)
-            print("Using Counting sort.")
-        case 8:
-            sortedNumbers = shellSort(numbers)
-            print("Using Shell sort.")
-        case 9:
-            sortedNumbers = timSort(numbers)
-            print("Using Tim sort.")
-        case 10:
-            sortedNumbers = radixSort(numbers)
-            print("Using Radix sort.")
-        case 11:
-            sortedNumbers = stalinSort(numbers)
-            print("Using Stalin sort.")
+    if sortingType == 1:
+        sortedNumbers = bubbleSort(numbers)
+        print("Using bubble sort.")
+    elif sortingType == 2:
+        sortedNumbers = selectionSort(numbers)
+        print("Using selection sort.")
+    elif sortingType == 3:
+        sortedNumbers = insertionSort(numbers)
+        print("Using Insertion sort.")
+    elif sortingType == 4:
+        sortedNumbers = mergeSort(numbers)
+        print("Using Merge sort.")
+    elif sortingType == 5:
+        sortedNumbers = quickSort(numbers)
+        print("Using Quick sort.")
+    elif sortingType == 6:
+        sortedNumbers = heapSort(numbers)
+        print("Using Heap sort.")
+    elif sortingType == 7:
+        sortedNumbers = countingSort(numbers)
+        print("Using Counting sort.")
+    elif sortingType == 8:
+        sortedNumbers = shellSort(numbers)
+        print("Using Shell sort.")
+    elif sortingType == 9:
+        sortedNumbers = timSort(numbers)
+        print("Using Tim sort.")
+    elif sortingType == 10:
+        sortedNumbers = radixSort(numbers)
+        print("Using Radix sort.")
+    elif sortingType == 11:
+        sortedNumbers = stalinSort(numbers)
+        print("Using Stalin sort.")
+    else:
+        print("Invalid sorting type.")
+        return
+
 
     #-----------main loop------------#
     while running:                                          # main loop checks whether the window is still open
@@ -213,5 +216,6 @@ if __name__ == "__main__":
     main(n, sortingType, sleepTime)
 
 # youtube video: https://www.youtube.com/watch?v=rbbTd-gkajw
+
 
 
