@@ -64,3 +64,12 @@ Adjust the window size and number of elements to experiment with performance and
 Some algorithms, like Bubble Sort and Cocktail Shaker Sort, move elements gradually and look visually similar.
 
 Faster algorithms like Merge Sort, Quick Sort, or Tim Sort may appear smoother and sort large lists more efficiently.
+
+
+For stupid school PCs:
+
+```bash
+"C:\Users\lukas.weber\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\python.exe" sortingAlgorithm.py 100 2
+```
+
+
