@@ -22,9 +22,9 @@ def main(n,sortingType, sleepTime=0):
     py.display.set_caption("Sorting Algorithm 1")           # set caption from the screen
     running = True
 
-    sortingStarted = False
+    sortingStarted = False        
     sortingFinished = False
-    sortedNumbers = []
+    sortedNumbers = []                                      # create an empty list to fill with the sorted numbers
     #sortedNumbers = bubbleSort(numbers)
 
 
@@ -70,7 +70,7 @@ def main(n,sortingType, sleepTime=0):
             if event.type == py.QUIT:
                 running = False
             keys = py.key.get_pressed()
-            if keys[py.K_SPACE]:
+            if keys[py.K_SPACE]:                            # start sorting with pressing space key
                 sortingStarted = True
                 startingTime = time.time()
 
@@ -148,7 +148,16 @@ def selectionSort(lst):
 
 #--------------insertion sort--------------#
 def insertionSort(lst):
-    pass
+
+    n = len(lst)
+    for i in range(1, n):
+        tmp = lst[i]
+        j = i
+        while j > 0 and tmp < lst[j - 1]:
+            lst[j] = lst[j - 1]
+            j -= 1
+        lst[j] = tmp
+        yield lst
 
 #--------------merge sort--------------#
 def mergeSort(lst):
@@ -204,4 +213,5 @@ if __name__ == "__main__":
     main(n, sortingType, sleepTime)
 
 # youtube video: https://www.youtube.com/watch?v=rbbTd-gkajw
+
 
