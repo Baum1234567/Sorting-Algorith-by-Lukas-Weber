@@ -43,7 +43,6 @@ python sortingAlgorithm.py <number_of_elements> <sorting_type>
 
 Example
 
-Copy code
 ```bash
 python sortingAlgorithm.py 500 4
 ```
