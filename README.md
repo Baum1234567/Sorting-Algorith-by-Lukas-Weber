@@ -42,8 +42,9 @@ python sortingAlgorithm.py <number_of_elements> <sorting_type>
 ---
 
 Example
-```bash
+
 Copy code
+```bash
 python sortingAlgorithm.py 500 4
 ```
 This runs the visualizer with 500 elements using Merge Sort.
